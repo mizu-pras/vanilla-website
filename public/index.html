@@ -4,14 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>No Framework Website</title>
+    <title>Bot Roullete</title>
     
     <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 <body>
 
     <div id="root">
-        <h1>No Framework Website</h1>
+        <div class="content welcome-screen" id="welcome-screen">
+            <button class="btn btn-enter" id="button-enter">ENTER</button>
+        </div>
+
+        <div class="content start-game-screen" id="start-game-screen" style="display: none;">
+            <form class="form-game-screen" name="form-start-game" id="form-start-game">
+                <h1>Form Start Game</h1>
+
+                <div class="inputs-wrapper">
+                    <select type="text" class="input-game" id="url-website">
+                        <option value="https://bolagila.asia/">Bolagila</option>
+                    </select>
+                    
+                    <select type="text" class="input-game" id="url-game">
+                        <option value="https://lobbybalancing.menangtoto.pw/">Live</option>
+                        <option value="https://dev.menangtoto.pw/">Dev</option>
+                    </select>
+
+                    <select type="text" class="input-game" id="one-bet">
+                        <option value="5000">5K</option>
+                        <option value="10000">10K</option>
+                    </select>
+
+                    <div class="hr"></div>
+                    
+                    <input type="text" class="input-game" id="username" placeholder="username">
+                    <input type="text" class="input-game" id="password" placeholder="password">
+                    <input type="text" class="input-game" id="id-lobby" placeholder="ID lobby">
+
+                    <div class="buttons-wrapper">
+                        <button type="button" class="btn btn-back-from-game" id="button-back-from-start-game">Back</button>
+                        <button type="submit" class="btn btn-start-game" id="button-start-game">Start Game</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="content loading-screen" id="loading-screen" style="display: none;">
+            <div id="progress-open" class="progress-wrapper">
+                <span>Text Progress...</span>
+            </div>
+        </div>
     </div>
 
     <script src="./assets/scripts/bundle.js"></script>

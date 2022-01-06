@@ -1,0 +1,11 @@
+.btn {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
