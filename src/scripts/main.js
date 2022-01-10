@@ -48,3 +48,7 @@ formStartGame.addEventListener('submit', function(event) {
     // if success pass validation form
     changeComponent('loading-screen')
 })
+
+if (window.performance) {
+    console.info("window.performance works fine on this browser");
+}

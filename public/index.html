@@ -53,6 +53,39 @@
                 <span>Text Progress...</span>
             </div>
         </div>
+
+        <div class="content game-screen" id="game-screen" style="display: none;">
+
+            <div class="container-game">
+                <div class="container-statistik-game">
+                    <div class="status-game"><span>Start Game</span> <span id="status-start-game"></span></div>
+                    <div class="status-game"><span>End Game</span> <span id="status-end-game"></span></div>
+
+                    <div class="status-game"><span>Bet Active</span> <span id="status-bet-active"></span></div>
+                    <div class="status-game"><span>Status</span> <span id="status-bet-status"></span></div>
+
+                    <table class="table-statistik" id="table-statistik">
+                        <thead>
+                            <tr>
+                                <th>Win</th>
+                                <th>Periode</th>
+                                <th>Max Bet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="table-win">0</td>
+                                <td id="table-periode">0</td>
+                                <td id="table-max">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button type="button" class="btn btn-end-game" id="button-end-game">End Game</button>
+            </div>
+
+        </div>
     </div>
 
     <script src="./assets/scripts/bundle.js"></script>
