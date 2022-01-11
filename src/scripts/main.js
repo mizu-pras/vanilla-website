@@ -1,25 +1,32 @@
 import {
     buttonEnter,
     buttonBackFromGame,
+    buttonEndGame,
+    buttonRestartGame,
     formStartGame,
     urlWebInput,
     urlGameInput,
     usernameInput,
     passwordInput,
     idLobbyInput,
-    oneBetInput
+    oneBetInput,
+    targetWinInput
 } from './variables/elements'
 
-import { games } from './variables/globals'
+import { games, socketLocal, resultGame } from './variables/globals'
 
 import { changeComponent } from './utils'
 
 buttonEnter.addEventListener('click', () => {
+    socketLocal.connectSocket()
+
     changeComponent('start-game-screen')
 })
 
 buttonBackFromGame.addEventListener('click', () => {
     changeComponent('welcome-screen')
+
+    socketLocal.stopGame()
 })
 
 formStartGame.addEventListener('submit', function(event) {
@@ -42,11 +49,30 @@ formStartGame.addEventListener('submit', function(event) {
     if (oneBetInput.value) {
         games.oneBet = Number(oneBetInput.value)
     }
+    if (targetWinInput.value) {
+        resultGame.targetWin = Number(targetWinInput.value)
+    }
 
-    console.log('games', games)
+	socketLocal.startGame(data)
 
     // if success pass validation form
     changeComponent('loading-screen')
+})
+
+buttonEndGame.addEventListener('click', () => {
+    socketLocal.stopGame()
+})
+
+buttonRestartGame.addEventListener('click', () => {
+    changeComponent('welcome-screen')
+
+    buttonRestartGame.style.display = 'none'
+    buttonRestartGame.disabled = true
+
+    buttonEndGame.style.display = 'block'
+    buttonEndGame.disabled = false
+    
+    
 })
 
 if (window.performance) {

@@ -9,12 +9,20 @@
         border-radius: 5px;
     }
 
-    .btn-end-game {
+    .btn-end-game,
+    .btn-restart-game {
         margin-top: 32px;
         font-size: 14px;
         padding: 12px 24px;
         color: #fff;
+    }
+
+    .btn-end-game {
         background-color: #ff4e4e;
+    }
+
+    .btn-restart-game {
+        background-color: #007eff;
     }
 
     .container-statistik-game {
@@ -44,5 +52,27 @@
         margin: 8px 0;
         display: flex;
         justify-content: space-between;
+    }
+
+    .container-info-game {
+        margin-bottom: 38px;
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .text-is-running {
+        color: #fff;
+        font-size: 14px;
+        padding: 4px 8px;
+        border-radius: 5px;
+        
+        &.open {
+            background-color: green;
+        }
+        &.close {
+            background-color: red;
+        }
     }
 }

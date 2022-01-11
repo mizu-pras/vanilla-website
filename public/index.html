@@ -22,6 +22,7 @@
                 <div class="inputs-wrapper">
                     <select type="text" class="input-game" id="url-website">
                         <option value="https://bolagila.asia/">Bolagila</option>
+                        <option value="https://180.210.206.249/">Dewa Live</option>
                     </select>
                     
                     <select type="text" class="input-game" id="url-game">
@@ -39,6 +40,7 @@
                     <input type="text" class="input-game" id="username" placeholder="username">
                     <input type="text" class="input-game" id="password" placeholder="password">
                     <input type="text" class="input-game" id="id-lobby" placeholder="ID lobby">
+                    <input type="text" class="input-game" id="target-win" placeholder="Target Win" value="10">
 
                     <div class="buttons-wrapper">
                         <button type="button" class="btn btn-back-from-game" id="button-back-from-start-game">Back</button>
@@ -49,14 +51,20 @@
         </div>
 
         <div class="content loading-screen" id="loading-screen" style="display: none;">
-            <div id="progress-open" class="progress-wrapper">
-                <span>Text Progress...</span>
+            <div class="progress-wrapper">
+                <span id="progress-open"></span>
             </div>
         </div>
 
         <div class="content game-screen" id="game-screen" style="display: none;">
 
             <div class="container-game">
+                <div class="container-info-game">
+                    <span id="is-running" class="text-is-running open"></span>
+
+                    <span class="game-timer" id="game-timer"></span>
+                </div>
+
                 <div class="container-statistik-game">
                     <div class="status-game"><span>Start Game</span> <span id="status-start-game"></span></div>
                     <div class="status-game"><span>End Game</span> <span id="status-end-game"></span></div>
@@ -83,6 +91,7 @@
                 </div>
 
                 <button type="button" class="btn btn-end-game" id="button-end-game">End Game</button>
+                <button type="button" class="btn btn-restart-game" style="display: none;" disabled id="restart-end-game">Restart Game</button>
             </div>
 
         </div>
